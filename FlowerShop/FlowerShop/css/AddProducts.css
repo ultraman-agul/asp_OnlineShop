@@ -1,0 +1,109 @@
+﻿/* .A-con-left{
+    margin-right: 50px;
+} */
+.A-con-right{
+    border-left:1px solid #737373;
+    margin-left:120px;
+    padding:0 50px;
+}
+
+.A-content{
+    height:auto;
+}
+.A-con-right-item{
+    /* display:flex; */
+    line-height: 36px;
+}
+
+.A-con-right-item span
+{
+    display: inline;
+    text-align: right;
+}
+.A-name-box,
+.A-flowerLanguage-box,
+.A-classify-box,
+.A-presentation-box,
+.A-price-box,
+.A-materials-box {
+    width: 300px;
+    height: 25px;
+    line-height: 23px;
+    margin-top: 8px;
+}
+
+/*花语*/
+.A-flowerLanguage-box {
+    height: 50px;
+}
+/*分类*/
+.A-classify-box {
+    width: 150px;
+    margin-right: 5px;
+}
+.A-classify1, .A-classify2 {
+    display: block;
+}
+/*花材*/
+.A-materials-box {
+    width: 300px;
+}
+/*介绍*/
+.A-presentation-box {
+    height: 100px;
+}
+
+.A-showImg1, .A-showImg2 {
+    width: 160px;
+    height: 180px;
+    margin-right: 10px;
+}
+/*详情图片*/
+.A-showImg2 {
+    width: 400px;
+    height: 300px;
+}
+.A-fileUpload {
+    margin-top: 8px;
+    height: 30px;
+    width: 200px;
+}
+/*单价*/
+.A-price-box {
+    width: 200px;
+}
+/*提交按钮*/
+.A-but {
+    width: 250px;
+    height: 50px;
+    border-radius: 50px;
+    /*圆角的边框*/
+    background-color: #FF6A00;
+    color: white;
+    font: bold;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 100px;
+    cursor: pointer; /*手 光标形状*/
+}
+/*提示*/
+.A-hint {
+    margin-left: 250px;
+    font: bold;
+    font-size: 30px;
+    color: #FF6A00;
+}
+/*验证*/
+.A-Msg {
+    margin-left: 10px;
+    margin-top: 12px;
+    width: 300px;
+    height: 15px;
+    line-height: 15px;
+    font-size: 11px;
+    color: red;
+    display: none;
+}
+.A-nameMsg2 {
+    display: none;
+}

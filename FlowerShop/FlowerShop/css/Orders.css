@@ -1,0 +1,152 @@
+﻿/* .S-MainCont{
+    padding:100px 300px;
+} */
+/* .S-Cart{
+    padding:100px 300px;
+} */
+.dst_table {
+    display: flex;
+    font-size: 14px;
+    margin-left: 250px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    list-style: none;
+    line-height: 20px;
+    border-top: 1px dotted #737373;
+}
+
+/* .auto-style1:nth-child(1){
+    border-top:0;
+} */
+.O-tit {
+    margin-left: 40px;
+}
+
+.dst_img {
+    width: 200px;
+    height: 100px;
+    line-height: 92px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+}
+
+    .dst_img img {
+        width: 100px;
+        height: 100px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.175);
+    }
+
+.dst_txt {
+    display: inline-table;
+    width: 300px;
+    height: 100px;
+    line-height: 50px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.txt_money {
+    color: #FF6A00;
+}
+
+
+.O-contbottom {
+    display: table;
+    width: 1000px;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    border: 1px solid #d9d9d9;
+}
+
+.bottom_1 {
+    margin-top: 10px;
+    margin-left: 50px;
+    font-size: 13px;
+}
+
+.O-num, .O-price {
+    font-size: 18px;
+    font: bold;
+    color: black;
+}
+
+.O-price {
+    color: #FF6A00;
+}
+
+.address_1 p {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center
+}
+
+.O-ddl {
+    height: 30px;
+    width: 500px;
+    text-align: center;
+}
+
+.O-textBox {
+    margin-left: 80px;
+    margin-top: 2px;
+    width: 500px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d9d9d9;
+}
+
+.O-message {
+    line-height: 70px;
+}
+
+.textBox5 {
+    margin-left: 10px;
+    height: 50px;
+}
+
+.O-pay {
+    width: 150px;
+    margin-left:500px;
+}
+
+.O-paybtn {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.O-pay input{
+    width:100px;
+    height: 30px;
+}
+
+.bottom_but {
+    margin-left: 400px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.but_1 {
+    background-color: #d9d9d9;
+    color:sandybrown;
+    width: 150px;
+    height: 40px;
+    font-family: 黑体;
+    font-weight: 700;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.but_1:hover{
+    background-color: sandybrown;
+    color: white;
+}
+
+
+
+
+
+

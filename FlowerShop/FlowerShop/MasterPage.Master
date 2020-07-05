@@ -1,0 +1,488 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="FlowerShop.MasterPage" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <%-- <title>鲜花网</title> --%>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    <link href="./css/Master.css" rel="stylesheet" />
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/Master.js"></script>
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!-- 右侧链接 start -->
+            <div class="M-R-link">
+                <div class="M-R-con">
+                    <div class="M-R-quick-link">
+                        <ul>
+                            <!-- 用户 -->
+                            <li>
+                                <asp:HyperLink ID="HyperLink101" NavigateUrl="#" runat="server" ToolTip="用户中心">
+                                <i class="iconfont">&#xe60e;</i>
+                                </asp:HyperLink>
+                                <!-- ***** 未登录 ***** -->
+                                <div class="ibar_login_box" style="display: none;">
+                                    <div class="avatar_box" id="loginStats">
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- 购物车 -->
+                            <li id="shopCart">
+                                <asp:HyperLink ID="HyperLink102" NavigateUrl="~/user/ShoppingCart.aspx" CssClass="M-message_list" runat="server">
+                                    <br />
+                                    <i class="iconfont">&#xf0179;</i>
+                                    <div class="M-span">
+                                        购<br />
+                                        物<br />
+                                        车
+                                    </div>
+                                    <asp:Label ID="Label1" CssClass="M-cart_num" runat="server" Text="0"></asp:Label>
+                                </asp:HyperLink>
+                            </li>
+                            <!-- 我的订单 -->
+                            <li>
+                                <asp:HyperLink ID="HyperLink64" NavigateUrl="~/user/MyOrder.aspx" runat="server" ToolTip="我的订单">
+                                <i class="iconfont">&#xe637;</i>
+                                </asp:HyperLink>
+                                <div class="mp_tooltip" style="display: none; left: -150px; visibility: hidden;">
+                                    <a href="javascript:void(0)" class="mpbtn_histroy" style="color: #595656; font-size: 14px; width: 100%; background: #fff; border-radius: 3px 0 0 3px;">最近查看</a>
+                                </div>
+                            </li>
+                            <!-- 我的收藏 -->
+                            <li>
+                                <asp:HyperLink ID="HyperLink63" runat="server">
+                                <i class="iconfont">&#xe623;</i>
+                                </asp:HyperLink>
+                                <div class="mp_tooltip" style="display: none; left: -150px; visibility: hidden;">
+                                    <a href="#" class="history_list" style="color: #595656; font-size: 14px; width: 100%; background: #fff; border-radius: 3px 0 0 3px;">我的收藏</a>
+                                </div>
+                            </li>
+                            <!-- 电话 -->
+                            <li>
+                                <asp:HyperLink ID="HyperLink65" runat="server">
+                                <i class="iconfont">&#xe60f;</i>
+                                </asp:HyperLink>
+                                <div class="mp_tooltip" style="display: none; left: -150px; visibility: hidden;"><span id="rightbartel">400-889-8188</span></div>
+                            </li>
+                            <!-- 客服 -->
+                            <li>
+                                <asp:HyperLink ID="HyperLink66" runat="server">
+                                <i class="iconfont">&#xe88e;</i>
+                                </asp:HyperLink>
+                                <div class="mp_tooltip" style="display: none; left: -150px; visibility: hidden;">
+                                    <a id="kefu1" href="#" target="_blank" class="mpbtn_recharge1" style="color: #595656; font-size: 14px; width: 100%; background: #fff; border-radius: 3px 0 0 3px;" title="在线客服">在线客服
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="M-R-con-bottom">
+                        <ul>
+                            <!-- 二维码 -->
+                            <li>
+                                <asp:HyperLink ID="HyperLink103" runat="server">
+                                <i class="iconfont">&#xe646;</i>
+                                </asp:HyperLink>
+                            </li>
+                            <!-- 反馈 -->
+                            <li>
+                                <asp:HyperLink ID="HyperLink104" NavigateUrl="#" runat="server">
+                                <i class="iconfont">&#xe61a;</i>
+                                </asp:HyperLink>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 右侧链接 end -->
+
+
+            <!-- 顶部导航 -->
+            <div class="M-top">
+                <div class="container">
+                    <ul class="M-top-l">
+                        <li class="menu">
+                            <asp:HyperLink ID="HyperLink5" NavigateUrl="~/user/Index.aspx" runat="server">
+                        <i class="iconfont">&#xe623;</i>
+                        收藏鲜花网 
+                            </asp:HyperLink>
+                        </li>
+                        <li class="menu dropdown">
+                            <asp:HyperLink ID="HyperLink6" NavigateUrl="~/user/Index.aspx" runat="server">
+                        <i class="iconfont">&#xe63e;</i>
+                        关注微信
+                            </asp:HyperLink>
+                            <div class="dropdown-menu dropdown-weixin">
+                            </div>
+                        </li>
+                        <li class="menu dropdown">
+                            <asp:HyperLink ID="HyperLink7" NavigateUrl="~/user/Index.aspx" runat="server">
+                        <i class="iconfont">&#xe621;</i>
+                        花礼网app 
+                            </asp:HyperLink>
+                            <div class="dropdown-menu dropdown-weixin">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="M-top-r">
+                        <!--登陆状态信息显示start-->
+                        <li class="menu login">
+                            <asp:HyperLink ID="HyperLink8" NavigateUrl="~/Login.aspx" runat="server">你好，请登录</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink9" NavigateUrl="~/user/Register.aspx" runat="server">注册</asp:HyperLink>
+                        </li>
+                        <!--登陆状态信息显示end-->
+                        <li class="M-top-pipe">|</li>
+                        <li class="menu">
+                            <asp:HyperLink ID="HyperLink10" NavigateUrl="~/user/MyOrder.aspx" runat="server">订单查询 </asp:HyperLink>
+                        </li>
+                        <li class="M-top-pipe">|</li>
+                        <!--我的花礼信息显示start-->
+                        <li class="menu dropdown">
+                            <asp:HyperLink ID="HyperLink11" NavigateUrl="~#" runat="server">我的花礼 </asp:HyperLink>
+                        </li>
+                        <!--我的花礼信息显示end-->
+                        <li class="M-top-pipe">|</li>
+                        <li class="menu dropdown">
+                            <asp:HyperLink ID="HyperLink12" NavigateUrl="#" runat="server"> 客户服务 </asp:HyperLink>
+                        </li>
+                        <li class="M-top-pipe">|</li>
+                        <!--购物车信息显示start-->
+                        <li class="menu dropdown">
+                            <asp:HyperLink ID="HyperLink13" NavigateUrl="~/user/ShoppingCart.aspx" runat="server">
+                        <i class="iconfont">&#xf0179;</i>购物车 
+                            </asp:HyperLink>
+                            <div></div>
+                        </li>
+                        <!--购物车信息显示end-->
+                        <li class="M-top-pipe">|</li>
+                        <li class="menu slogan">中国鲜花礼品网:中国鲜花网领先品牌
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 顶部导航 End -->
+
+            <!-- 头部 start-->
+            <header>
+                <!-- logo start-->
+                <div class="M-top-logo">
+                    <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Index.aspx" runat="server">
+               <img src="./Images/logo1.png" alt="Alternate Text" width="200" height="50" style="margin-top:20px;margin-left:5px;">
+                    </asp:HyperLink>
+                </div>
+                <!-- logo End-->
+                <!-- 搜索区 start-->
+                <div class="M-top-ss">
+                    <div class="ss-box">
+                        <asp:TextBox ID="TextBox1" runat="server" CssClass="ss-textbox" BorderStyle="None" Placeholder="商品关键词"></asp:TextBox>
+                    </div>
+                    <asp:Button ID="Button1" runat="server" Text="搜索" CssClass="ss-but" BorderStyle="None" />
+                    <p>
+                        <asp:HyperLink ID="HyperLink15" runat="server">红玫瑰</asp:HyperLink>
+                        &nbsp;|&nbsp;
+                    <asp:HyperLink ID="HyperLink16" runat="server">穆斯女神</asp:HyperLink>
+                        &nbsp;|&nbsp;
+                    <asp:HyperLink ID="HyperLink17" runat="server">生日鲜花</asp:HyperLink>
+                        &nbsp;|&nbsp;
+                    <asp:HyperLink ID="HyperLink18" runat="server">礼品卡</asp:HyperLink>
+                    </p>
+                </div>
+                <!-- 搜索区 End-->
+                <!-- 联系区 start-->
+                <div class="M-top-lx">
+                    <p>
+                        <i class="iconfont">&#xe60f;</i>&nbsp;400-889-8188 &nbsp;
+                | &nbsp;<i class="iconfont">&#xe88e;</i>&nbsp;<a>在线客服</a>
+                    </p>
+                </div>
+                <!-- 联系区 End-->
+            </header>
+            <!-- 头部 End -->
+
+            <!-- 中间主要内容区 start -->
+            <div class="M-content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <!-- 导航栏 start -->
+                    <div class="M-nav">
+                        <!-- 全部商品导购 start -->
+                        <div class="nav-con">
+                            <div class="categorys">
+                                <h3 class="categorys-title">
+                                    <asp:HyperLink ID="HyperLink14" runat="server">全部商品导购</asp:HyperLink>
+                                </h3>
+                            </div>
+                            <div class="dropdown-cate">
+                                <!-- 鲜花系列 start -->
+                                <h4>
+                                    <asp:LinkButton ID="LinkButton1" OnClick="XH_LinkButton1_Click" runat="server">鲜花系列</asp:LinkButton>
+                                </h4>
+                                <ul>
+                                    <li>
+                                        <asp:LinkButton ID="LinkButton4" OnClick="AQ_LinkButton1_Click" runat="server">爱情系列</asp:LinkButton>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="LinkButton3" OnClick="SR_LinkButton1_Click" runat="server">生日系列</asp:LinkButton>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="LinkButton5" OnClick="HQ_LinkButton1_Click" runat="server">婚庆系列</asp:LinkButton>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="LinkButton6" OnClick="SH_LinkButton1_Click" runat="server">生活系列</asp:LinkButton>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="LinkButton7" OnClick="SW_LinkButton1_Click" runat="server">商务系列</asp:LinkButton>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="LinkButton8" OnClick="BY_LinkButton1_Click" runat="server">殡仪系列</asp:LinkButton>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="LinkButton9" OnClick="QT_LinkButton1_Click" runat="server">其它系列</asp:LinkButton>
+                                    </li>
+                                </ul>
+                                <!-- 鲜花系列 end -->
+                                <!-- 鲜花花材 start -->
+                                <h4>
+                                    <asp:HyperLink ID="HyperLink27" runat="server">鲜花花材</asp:HyperLink>
+                                </h4>
+                                <ul>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink28" runat="server">玫瑰</asp:HyperLink>
+                                    </li>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink29" runat="server">康乃馨</asp:HyperLink>
+                                    </li>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink30" runat="server">百合</asp:HyperLink>
+                                    </li>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink31" runat="server">向日葵</asp:HyperLink>
+                                    </li>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink32" runat="server">扶郎</asp:HyperLink>
+                                    </li>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink33" runat="server">郁金香</asp:HyperLink>
+                                    </li>
+                                    <li>
+                                        <asp:HyperLink ID="HyperLink34" runat="server">马蹄莲</asp:HyperLink>
+                                    </li>
+                                </ul>
+                                <!-- 鲜花花材 end -->
+                                <!-- 永生花 start -->
+                                <div class="cate-cake stature1">
+                                    <asp:LinkButton ID="LinkButton40" OnClick="YS_LinkButton1_Click" runat="server">
+                                <span><i class="iconfont">&#xe628;</i></span>
+                                永生花
+                                    </asp:LinkButton>
+                                    <div class="M-baffle1"></div>
+                                    <div class="right-menu rm1" style="bottom: 227px; display: none;">
+                                        <b style="bottom: 191px;"></b>
+                                        <h5>永生花类别</h5>
+                                        <div class="link-img">
+                                            <asp:LinkButton ID="LinkButton15" OnClick="JD_LinkButton1_Click" runat="server">
+                                        <img src="./Images/master/ysh_brand_menu_01.jpg" height="62" width="96">经典花盒
+                                            </asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton16" OnClick="JX_LinkButton1_Click" runat="server">
+                                        <img src="./Images/master/ysh_brand_menu_02.jpg" height="62" width="96">巨型玫瑰
+                                            </asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton17" OnClick="XY_LinkButton1_Click" runat="server">
+                                        <img src="./Images/master/ysh_brand_menu_03.jpg" height="62" width="96">薰衣草
+                                            </asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton18" OnClick="PH_LinkButton1_Click" runat="server">
+                                        <img src="./Images/master/ysh_brand_menu_04.jpg" height="62" width="96">永生瓶花
+                                            </asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton19" OnClick="TS_LinkButton1_Click" runat="server">
+                                        <img src="./Images/master/ysh_brand_menu_05.jpg" height="62" width="96">特色永生花
+                                            </asp:LinkButton>
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <asp:LinkButton ID="LinkButton20" OnClick="PH_LinkButton1_Click" runat="server">永生瓶花</asp:LinkButton>
+                                        </li>
+                                        <li>
+                                            <asp:LinkButton ID="LinkButton21" OnClick="JD_LinkButton1_Click" runat="server">经典花盒</asp:LinkButton>
+                                        </li>
+                                        <li>
+                                            <asp:LinkButton ID="LinkButton22" OnClick="JX_LinkButton1_Click" runat="server">巨型玫瑰</asp:LinkButton>
+                                        </li>
+                                        <li>
+                                            <asp:LinkButton ID="LinkButton23" OnClick="TS_LinkButton1_Click" runat="server">特色永生花</asp:LinkButton>
+                                        </li>
+                                        <li>
+                                            <asp:LinkButton ID="LinkButton24" OnClick="XY_LinkButton1_Click" runat="server">薰衣草</asp:LinkButton>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 永生花 end -->
+                                <!-- 礼品 start -->
+                                <div class="cate-cake stature2">
+                                    <asp:LinkButton ID="LinkButton39" OnClick="LP_LinkButton1_Click" runat="server">
+                                <span><i class="iconfont">&#xe628;</i></span>
+                                礼品
+                                    </asp:LinkButton>
+                                    <div class="M-baffle2"></div>
+                                    <div class="right-menu rm2" style="bottom: 227px; display: none;">
+                                        <h5>礼品类别</h5>
+                                        <div class="link-img">
+                                            <asp:LinkButton ID="LinkButton32" OnClick="YY_LinkButton1_Click" runat="server">
+                                        <img src="./Images/master/gifts-musicbox.png" height="62" width="58">音乐盒
+                                            </asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton33" OnClick="JB_LinkButton1_Click" runat="server">
+                                        <img src="./Images/master/gifts-goldenflower.png" height="62" width="58">金箔花
+                                            </asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton34" OnClick="SJ_LinkButton1_Click" runat="server">
+                                        <img src="./Images/master/gifts-crystallaser.png" height="62" width="58">3D水晶内雕
+                                            </asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton35" OnClick="SM_LinkButton1_Click" runat="server">
+                                        <img src="./Images/master/gifts-shoushi.png" height="62" width="58">首饰/美妆
+                                            </asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton36" OnClick="QK_LinkButton1_Click" runat="server">
+                                        <img src="./Images/master/gifts-chocolates.png" height="62" width="58">巧克力
+                                            </asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton37" OnClick="GS_LinkButton1_Click" runat="server">
+                                        <img src="./Images/master/gifts-toys.png" height="62" width="58">公仔/睡枕
+                                            </asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton38" OnClick="BQ_LinkButton1_Click" runat="server">
+                                        <img src="./Images/master/gifts-dengshi.png" height="62" width="58">摆件/其他
+                                            </asp:LinkButton>
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <asp:LinkButton ID="LinkButton25" OnClick="YY_LinkButton1_Click" runat="server">音乐盒</asp:LinkButton>
+                                        </li>
+                                        <li>
+                                            <asp:LinkButton ID="LinkButton26" OnClick="JB_LinkButton1_Click" runat="server">金箔花</asp:LinkButton>
+                                        </li>
+                                        <li>
+                                            <asp:LinkButton ID="LinkButton27" OnClick="SJ_LinkButton1_Click" runat="server">3D水晶内雕</asp:LinkButton>
+                                        </li>
+                                        <li>
+                                            <asp:LinkButton ID="LinkButton28" OnClick="SM_LinkButton1_Click" runat="server">首饰/美妆</asp:LinkButton>
+                                        </li>
+                                        <li>
+                                            <asp:LinkButton ID="LinkButton29" OnClick="QK_LinkButton1_Click" runat="server">巧克力</asp:LinkButton>
+                                        </li>
+                                        <li>
+                                            <asp:LinkButton ID="LinkButton30" OnClick="GS_LinkButton1_Click" runat="server">公仔/睡枕</asp:LinkButton>
+                                        </li>
+                                        <li>
+                                            <asp:LinkButton ID="LinkButton31" OnClick="BQ_LinkButton1_Click" runat="server">摆件/其他</asp:LinkButton>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 礼品 end -->
+                            </div>
+                        </div>
+                        <!-- 全部商品导购 end -->
+                        <ul class="nav">
+                            <li>
+                                <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Index.aspx" runat="server">首页</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="LinkButton2" OnClick="XH_LinkButton1_Click" runat="server">鲜花套餐</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="LinkButton10" OnClick="YS_LinkButton1_Click" runat="server">永生花</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="LinkButton11" OnClick="XH_LinkButton1_Click" runat="server">花材</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="LinkButton12" OnClick="LP_LinkButton1_Click" runat="server">礼品</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink4" NavigateUrl="~/user/huayu.aspx" runat="server">花语大全</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink3" NavigateUrl="~/user/U_levaeMessage.aspx" runat="server">留言</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink19" NavigateUrl="~/user/FAQ.aspx" runat="server">帮助中心</asp:HyperLink>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 导航栏 end -->
+                </asp:ContentPlaceHolder>
+
+                <!-- 主要内容编辑区 start -->
+                <div class="M-content-con">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                 <!-- 主要内容编辑区 end -->
+            </div>
+
+            <!-- 底部信息 start-->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+            <div class="M-bottom">
+                <div id="footer" class="ft">
+                    <div class="ft-container">
+                        <!-- 尾部导航 -->
+                        <div class="ft-nav">
+                            <a href="/">首页</a>
+                            <a href="/profile/about.htm" target="_blank">关于我们</a>
+                            <a href="/profile/media.html" target="_blank">媒体报道</a>
+                            <a href="/profile/contact.htm" target="_blank">联系方式</a>
+                            <a href="/qiyetuangou/" target="_blank">企业团购</a>
+                            <a href="/liansuo/" target="_blank">花店入驻</a>
+                            <a href="/profile/links.htm" target="_blank">友情链接</a>
+                            <a href="/member/payment/balancefill" target="_blank">在线补款</a>
+                            <a href="/profile/why_choose_us.htm" target="_blank">为什么选择中国鲜花礼品网</a>
+                        </div>
+                        <!-- 尾部导航 End -->
+                        <!-- 尾部证书 -->
+                        <div class="ft-site">
+                            <p>
+                                <a href="/profile/ChinaFlowerAssociation.htm" rel="nofollow" target="_blank" title="中国花卉协会会员">中国花卉协会会员</a>
+                                <a href="/profile/chinaECA.htm" rel="nofollow" target="_blank">中国电子商务协会会员</a> ICP经营许可证：<a>粤B2-20050744</a>
+                                <a href="http://beian.miit.gov.cn" rel="nofollow" target="_blank">粤ICP备09171662号</a> <span class="icon icon-beian"></span>粤公网安备44030502000373号 Copyright © 2005-2020
+                            </p>
+                            <p>花礼网 （中国鲜花礼品网） <a href="/">www.hua.com</a><span> 深圳市百易信息技术有限公司</span> 中国鲜花网领先品牌，鲜花速递专家！</p>
+                            <div class="ft-auth">
+
+                                <span class="icon icon-slogan"></span>
+                                <a href="/profile/about.htm" target="_blank"><span class="icon icon-top100"></span></a>
+                                <a href="/profile/ICP.htm" rel="nofollow" target="_blank"><span class="icon icon-icp"></span></a>
+                                <div class="ft-auth-border">
+                                    <script id="ebsgovicon" src="https://szcert.ebs.org.cn/govicons.js?id=fab6de6a-ff80-4e63-89e4-cd531170c256&amp;width=75&amp;height=105&amp;type=1" type="text/javascript" charset="utf-8"></script>
+                                    <a href="https://szcert.ebs.org.cn/fab6de6a-ff80-4e63-89e4-cd531170c256" target="_blank">
+                                        <img src="https://szcert.ebs.org.cn/Images/govIcon.gif" title="深圳市市场监督管理局企业主体身份公示" alt="深圳市市场监督管理局企业主体身份公示" width="75" height="105" border="0" style="border-width: 0px; border: hidden; border: none;"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 尾部证书 End -->
+                        <!-- 友情链接 -->
+                        <div class="ft-link">
+                            <span>友链</span>
+                            <a href="http://www.chinaname.cn/" target="_blank">中华取名网</a>
+                            <a href="http://sz.fang.com/" target="_blank">深圳房产网</a>
+                            <a href="http://www.juanpi.com" target="_blank">卷皮网</a>
+                            <a href="http://www.wbiao.cn" target="_blank">腕表</a>
+                            <a href="http://www.yuanlin365.com/" target="_blank">苗木</a>
+                            <a href="http://www.zocai.com/" target="_blank">佐卡伊珠宝网</a>
+                            <a href="http://www.blove.com/" target="_blank">钻石婚戒定制</a>
+                            <a href="http://www.iyijiao.com/" target="_blank">中国青少年艺术教育网</a>
+                            <a href="http://www.dog126.com/" target="_blank">淘狗网</a>
+                            <a href="http://www.liwuyou.com/" target="_blank">礼无忧网</a>
+                            <a href="http://www.goupuzi.com/" target="_blank">宠物狗</a>
+                            <a href="http://www.jiyouwang.com/" target="_blank">机友网</a>
+                            <a href="http://www.cocodiy.com/" target="_blank">礼物网</a>
+                            <a href="http://www.ipo3.com/" target="_blank">新三板</a>
+                            <a href="http://www.huoming.com/" target="_blank">商标注册</a>
+                            <a href="http://www.loho88.com" target="_blank">眼镜店</a>
+                        </div>
+                        <!-- 友情链接 End -->
+                    </div>
+                </div>
+            </div>
+            </asp:ContentPlaceHolder>
+            <!-- 底部信息 end-->
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,87 @@
+﻿.MO-filterbar {
+    padding:10px;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 20px;
+    background-color: #ebebeb;
+}
+
+.Mo-sou,.MO-soubut {
+    border: 1px solid #FF6A00;
+    line-height: 20px;
+    float: left;
+    list-style: none;
+}
+
+.MO-sousuo{
+    height:20px;
+    padding-left: 10px;
+}
+
+.MO-soubut a{
+    background-color: #FF6A00;
+    color:#FFFFFF !important;
+}
+
+.MO-tit {
+    float: left;
+    margin-left: 50px;
+    width: 500px;
+}
+
+.MO-o_id{
+    color:darkgreen;
+}
+
+.MO-time{
+    color:darkorange;
+}
+
+.MO-order-list{
+    margin-left:100px;
+    display:flex;
+    padding:30px;
+    border-bottom: 1px dotted #737373;
+}
+
+.dst_img {
+    margin-left: 200px;
+}
+.dst_img img {
+    width: 80px;
+    height: 88px;
+    margin-right: 30px;
+}
+.dst_txt h3 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.dst_txt p {
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+.MO-piroe {
+    color: black;
+    font: bold;
+}
+.MO-num {
+    text-align: right;
+    margin-right: 50px;
+    margin-left: 300px;
+}
+
+.MO-bottom p {
+    padding-left: 100px;
+    margin: 10px 0;
+}
+.MO-bottom span {
+    margin-left: 20px;
+}
+.MO-buy {
+    margin-left: 600px;
+}
+.MO-buy-price span {
+    color: #FF6A00;
+    font-size: 18px;
+    font: bold;
+}

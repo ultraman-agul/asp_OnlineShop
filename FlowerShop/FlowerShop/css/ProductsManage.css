@@ -1,0 +1,58 @@
+﻿.P-content {
+    width: 1600px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.P-con-left{
+    float: left;
+    width: 195px;
+    /* border-right:1px solid #737373; */
+}
+
+.P-con-left-tite {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    font: bold;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background-color: pink;
+}
+
+.P-con-left-item a{
+    color:black;
+    height:30px;
+    line-height: 30px;
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    padding-right:50px;
+}
+
+.P-con-left-item a:hover{
+    background-color: pink;
+}
+/* 左侧结束 */
+/* 右侧开始 */
+.P-con-right{
+    float:left;
+    width: 1400px;
+    border-left:1px solid #737373;
+    padding-left: 10px;
+}
+
+table{
+    text-align: center;
+}
+
+table a:hover{
+    color:#FF6A00;
+}
+
+table img{
+    width: 100px;
+    height: 130px;
+}

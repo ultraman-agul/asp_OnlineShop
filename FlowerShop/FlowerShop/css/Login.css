@@ -1,0 +1,58 @@
+﻿.Main {
+    height: 630px;
+    background:url("../Images/login.png") no-repeat center;
+    border-top: 1px solid transparent; 
+    /* 防止margin-top发生塌陷 */
+}
+
+.Main-Login{
+    padding:60px;
+    height: 400px;
+    width:500px;
+    margin:0 auto;
+    margin-top:120px;   
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.Main-Login a{
+    color: orange;
+}
+
+.Login-tabs{
+    color:#000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Login-user{
+    font-size:16px;
+}
+
+.style1{
+    margin-left:50px;
+}
+
+.lost_pw{
+    color:black;
+    padding:20px 0;
+}
+
+.loginBut{
+    display: block;
+    width: 350px;
+}
+.loginBut1{
+    margin-left:150px;
+    width:100px;
+    height:40px;
+    text-align: center;
+    background-color:darkseagreen;
+}
+.Login-user .bottom a{
+    display: inline-block;
+    margin-top: 10px;
+    margin-top:10px;
+    margin-left: 200px;
+    color:orange;
+}
